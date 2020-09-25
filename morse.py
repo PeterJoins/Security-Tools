@@ -1,8 +1,12 @@
+#!/usr/bin/env python3
+# -*- coding: UTF-8 -*-
+# @Time     :2020/9/22
+# @Author   :PeterJoin
 from __future__ import print_function
-a = input("input the string:")
-s = a.split(" ")
- 
- 
+
+#11 111 010 000 0 1010 111 100 0 00 000 000 111 00 10 1 0 010 0 000 1 00 10 110
+
+#摩斯电码转ASCII码字典
 dict = {'01': 'A',
         '1000': 'B',
         '1010': 'C',
@@ -57,6 +61,24 @@ dict = {'01': 'A',
         '1111011':'{',
         '1111101':'}'
         };
-for item in s:
-    print (dict[item],end='')
-#print (s)
+
+def banner():
+    print(("""%s
+ __  __  ___  ____  ____  _____ 
+|  \/  |/ _ \|  _ \/ ___|| ____|
+| |\/| | | | | |_) \___ \|  _|  
+| |  | | |_| |  _ < ___) | |___ 
+|_|  |_|\___/|_| \_\____/|_____|
+                                                               %s%s
+        # Coded By PeterJoin -  你这个小猪怎么还不约我（´・ω・）%s
+    """ % ('\033[91m', '\033[0m', '\033[93m', '\033[0m')))
+
+
+
+if __name__ == '__main__':
+    banner()
+    inputString = input("input the string:")
+    s = inputString.split(" ")
+    for item in s:
+        print (dict[item],end='')
+
