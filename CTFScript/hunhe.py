@@ -1,3 +1,8 @@
+#!/usr/bin/env python3
+# -*- coding: UTF-8 -*-
+# @Time     :2020/9/27
+# @Author   :PeterJoin
+
 import base64
 
 a = open(r'/Users/peterjoin/Downloads/78697fd20e9c4ad295a62e5aa30ae052.txt','r')
@@ -5,7 +10,6 @@ s = a.read()
 
 # base64解密一下
 b = base64.b64decode(s).decode('ascii')
-print(b)
 # 对解密后的字符串进行处理
 b = b.strip('&#;')
 c = []
@@ -16,7 +20,6 @@ for i in c:
     d += chr(int(i))
 # base64再次解密
 e = base64.b64decode(d).decode('ascii')
-print(e)
 # 对字符进行处理
 e = e.strip('/')
 f = []
