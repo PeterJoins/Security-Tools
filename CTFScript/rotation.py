@@ -59,7 +59,8 @@ def banner():
  \___|/_/ /___\ |_|_\ / \___|/_/ /___|      \__,_|  \__,_|     
                \_____/                                         
                                                                %s%s
-        # Coded By PeterJoin -托马斯杰斐逊 转轮加密（´・ω・）%s
+        # Coded By PeterJoin -托马斯杰斐逊 转轮加密（´・ω・）
+        # https://github.com/PeterJoins/Security-Tools/blob/master/CTFScript/rotation.py %s
     """ % ('\033[91m', '\033[0m', '\033[93m', '\033[0m')))
 
 if __name__ == '__main__':
