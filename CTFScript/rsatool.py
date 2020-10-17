@@ -1,9 +1,9 @@
-#!/usr/bin/env python
-# -*- coding: UTF-8 -*-
-
-
-import base64, fractions, optparse, random
+import base64, optparse, random
 import gmpy
+try:
+    from fractions import gcd
+except ImportError:
+    from math import gcd
  
 from pyasn1.codec.der import encoder
 from pyasn1.type.univ import *
@@ -44,7 +44,7 @@ def factor_modulus(n, d, e):
  
             i += 1
  
-    p = fractions.gcd(c1-1, n)
+    p = gcd(c1-1, n)
     q = (n / p)
  
     return p, q
@@ -86,7 +86,7 @@ class RSA:
         """
         Return OpenSSL-compatible PEM encoded key
         """
-        return PEM_TEMPLATE % base64.encodestring(self.to_der())
+        return PEM_TEMPLATE % base64.encodebytes(self.to_der())
  
     def to_der(self):
         """
